@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tamil Nadu Generation and Distribution Corporation Limited (TANGEDCO)</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="https://www.tangedco.gov.in/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.tangedco.gov.in/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/simple-line-icons/css/simple-line-icons.css">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+    <!-- Weather css -->
+    <link href="assets/css/svg-weather.css" rel="stylesheet">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <style type="text/css" media="screen">
+    .card {
+        margin-bottom: 6px;
+    }
+
+    .dashboard-product {
+        background-color: #fff;
+        color: #777;
+        padding: 10px;
+    }
+
+    #map {
+        margin: 0 auto;
+        height: 301px;
+    }
+    </style>
+</head>
+
+<body class="sidebar-mini fixed">
+    <div class="loader-bg">
+        <div class="loader-bar">
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- Navbar-->
+        <header class="main-header-top hidden-print">
+            <a href="index.html" class="logo">
+                <!-- <img class="img-fluid able-logo" style="    width: 58px;" src="https://upload.wikimedia.org/wikipedia/en/6/62/TANGEDCO_Logo.png" alt="Theme-logo"> --> <b>TANGEDCO</b></a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                <ul class="top-nav lft-nav">
+                    <li class="pc-rheader-submenu">
+                        <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                            <i class="icon-size-fullscreen"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Navbar Right Menu-->
+                <div class="navbar-custom-menu f-right">
+                    <ul class="top-nav">
+                        <!-- User Menu-->
+                        <li class="dropdown">
+                            <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
+                                <!-- <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span> -->
+                                <span>Hi, <b>Sheshu</b> <i class=" icofont icofont-simple-down"></i></span>
+                            </a>
+                            <ul class="dropdown-menu settings-menu">
+                                <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
+                                <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+                                <li><a href="index.html"><i class="icon-logout"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Side-Nav-->
+        <aside class="main-sidebar hidden-print ">
+            <section class="sidebar" id="sidebar-scroll">
+                <!-- Sidebar Menu-->
+                <ul class="sidebar-menu">
+                    <li class="nav-level">--- Navigation</li>
+                    <li class=" treeview">
+                        <a class="waves-effect waves-dark" href="energy_audit.html">
+                            <i class="icon-speedometer"></i><span> Energy Audit</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="energy_audit-2.html">
+                            <i class="icon-speedometer"></i><span> Energy Audit 2nd Screen</span>
+                        </a>
+                    </li>
+                    <li class="active treeview">
+                        <a class="waves-effect waves-dark" href="outage_management.html">
+                            <i class="icon-disc"></i><span> Outage Management</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="PPA.html">
+                            <i class="icon-disc"></i><span> Power Purchase</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <div class="content-wrapper">
+            <!-- Container-fluid starts -->
+            <!-- Main content starts -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="main-header">
+                        <h4>Outage Management System</h4>
+                    </div>
+                </div>
+                <!-- 4-blocks row start -->
+                <div class="card-block col-xs-12" style="margin-top: -14px;">
+                    <div class="form-group col-md-3 col-xs-12">
+                        <label for="exampleSelect1" class="form-control-label">Zone</label>
+                        <select class="form-control " id="exampleSelect1">
+                            <option>Zone-1</option>
+                            <option>Zone-2</option>
+                            <option>Zone-3</option>
+                            <option>Zone-4</option>
+                            <option>Zone-5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3 col-xs-12">
+                        <label for="exampleSelect1" class="form-control-label">Area/Division</label>
+                        <select class="form-control " id="exampleSelect1">
+                            <option>Area-1</option>
+                            <option>Area-2</option>
+                            <option>Area-3</option>
+                            <option>Area-4</option>
+                            <option>Area-5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3 col-xs-12">
+                        <label for="exampleSelect1" class="form-control-label">Ward</label>
+                        <select class="form-control " id="exampleSelect1">
+                            <option>Ward-1</option>
+                            <option>Ward-2</option>
+                            <option>Ward-3</option>
+                            <option>Ward-4</option>
+                            <option>Ward-5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3 col-xs-12">
+                        <label for="exampleSelect1" class="form-control-label">Tranformer</label>
+                        <select class="form-control " id="exampleSelect1">
+                            <option>Tranformer-1</option>
+                            <option>Tranformer-2</option>
+                            <option>Tranformer-3</option>
+                            <option>Tranformer-4</option>
+                            <option>Tranformer-5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row dashboard-header">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="card dashboard-product">
+                            <span>Active Outage</span>
+                            <h2 class="dashboard-total-products text-danger">33% Events</h2>
+                            <div class="side-box">
+                                <i class="ti-unlink text-warning-color"></i>
+                            </div>
+                        </div>
+                        <div class="card" style="overflow-y: scroll;height: 460px;">
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <h6 class="card-header-text" style="font-size: 13px;font-weight: bold;">Outage Details</h6>
+                                    <ul class="dropdown-menu12">
+                                        <li class="bell-notification" style="margin-top:12px;">
+                                            <a href="" class="media">
+                                                <span class="media-left media-icon">
+                                                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
+                                                </span>
+                                                <div class="media-body"><span class="block" style="font-size: 13px;">Christain nelney <span class="text-muted block-time text-danger">(2mins ago)</span></span>
+                                                    <span class="text-muted block-time" style="font-size: 10px;">Affects 2000 customers cause is loss of Supply. ETR:2 Hours</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="bell-notification" style="margin-top:12px;">
+                                            <a href="" class="media">
+                                                <span class="media-left media-icon">
+                                                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
+                                                </span>
+                                                <div class="media-body"><span class="block" style="font-size: 13px;">Christain nelney <span class="text-muted block-time text-danger">(2mins ago)</span></span>
+                                                    <span class="text-muted block-time" style="font-size: 10px;">Affects 2000 customers cause is loss of Supply. ETR:2 Hours</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="bell-notification" style="margin-top:12px;">
+                                            <a href="" class="media">
+                                                <span class="media-left media-icon">
+                                                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
+                                                </span>
+                                                <div class="media-body"><span class="block" style="font-size: 13px;">Christain nelney <span class="text-muted block-time text-danger">(2mins ago)</span></span>
+                                                    <span class="text-muted block-time" style="font-size: 10px;">Affects 2000 customers cause is loss of Supply. ETR:2 Hours</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="bell-notification" style="margin-top:12px;">
+                                            <a href="" class="media">
+                                                <span class="media-left media-icon">
+                                                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
+                                                </span>
+                                                <div class="media-body"><span class="block" style="font-size: 13px;">Christain nelney <span class="text-muted block-time text-danger">(2mins ago)</span></span>
+                                                    <span class="text-muted block-time" style="font-size: 10px;">Affects 2000 customers cause is loss of Supply. ETR:2 Hours</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="not-footer text-right" style="font-size: 10px;">
+                                            <a href="#!">See more...</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6" style="padding-right: 0px;padding-left: 0px;">
+                        <div class="card dashboard-product" style="height: 320px;">
+                            <div id="map"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6" style="padding-right: 0px;">
+                                <div class="card dashboard-product" style="height: 237px;">
+                                    <span>Line Loss</span>
+                                    <h2 class="dashboard-total-products">0KW</h2>
+                                    <span class="label label-danger">Sales</span><small>Reviews</small>
+                                    <div class="side-box">
+                                        <i class="ti-direction-alt text-danger-color"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <div class="card" style="font-size: 13px;">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>List</th>
+                                                    <th>No.of Incidence</th>
+                                                    <th>%</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Residentail</td>
+                                                    <td>1815</td>
+                                                    <td>70%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Industrail</td>
+                                                    <td>1906</td>
+                                                    <td>80%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Agriculture</td>
+                                                    <td>1936</td>
+                                                    <td>60%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Huts</td>
+                                                    <td>1917</td>
+                                                    <td>50%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="card dashboard-product">
+                            <span>Line Loss</span>
+                            <h2 class="dashboard-total-products">0KW</h2>
+                            <span class="label label-danger">Sales</span><small>Reviews</small>
+                            <div class="side-box">
+                                <i class="ti-direction-alt text-danger-color"></i>
+                            </div>
+                        </div>
+                        <div class="card" style="height: 100px;font-size: 13px;margin-top:2px;">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Duration</th>
+                                            <th>Expected Results</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>150 min</td>
+                                            <td>75 KWH</td>
+                                            <td>25000/-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card" style="overflow-y: scroll;height: 331px;">
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <h6 class="card-header-text" style="font-size: 13px;font-weight: bold;">Category of Damage vs Severity Level</h6>
+                                    <ul class="dropdown-menu12">
+                                        <li class="bell-notification" style="margin-top:12px;">
+                                            <a href="" class="media">
+                                                <span class="media-left media-icon">
+                                                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
+                                                </span>
+                                                <div class="media-body"><span class="block" style="font-size: 13px;">Christain nelney <span class="text-muted block-time text-danger">(2mins ago)</span></span>
+                                                    <span class="text-muted block-time" style="font-size: 10px;">Affects 2000 customers cause is loss of Supply. ETR:2 Hours</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="bell-notification" style="margin-top:12px;">
+                                            <a href="" class="media">
+                                                <span class="media-left media-icon">
+                                                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
+                                                </span>
+                                                <div class="media-body"><span class="block" style="font-size: 13px;">Christain nelney <span class="text-muted block-time text-danger">(2mins ago)</span></span>
+                                                    <span class="text-muted block-time" style="font-size: 10px;">Affects 2000 customers cause is loss of Supply. ETR:2 Hours</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="bell-notification" style="margin-top:12px;">
+                                            <a href="" class="media">
+                                                <span class="media-left media-icon">
+                                                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
+                                                </span>
+                                                <div class="media-body"><span class="block" style="font-size: 13px;">Christain nelney <span class="text-muted block-time text-danger">(2mins ago)</span></span>
+                                                    <span class="text-muted block-time" style="font-size: 10px;">Affects 2000 customers cause is loss of Supply. ETR:2 Hours</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="bell-notification" style="margin-top:12px;">
+                                            <a href="" class="media">
+                                                <span class="media-left media-icon">
+                                                    <img class="img-circle" src="assets/images/avatar-1.png" alt="User Image">
+                                                </span>
+                                                <div class="media-body"><span class="block" style="font-size: 13px;">Christain nelney <span class="text-muted block-time text-danger">(2mins ago)</span></span>
+                                                    <span class="text-muted block-time" style="font-size: 10px;">Affects 2000 customers cause is loss of Supply. ETR:2 Hours</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="not-footer text-right" style="font-size: 10px;">
+                                            <a href="#!">See more...</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Required Jqurey -->
+    <script src="assets/plugins/Jquery/dist/jquery.min.js"></script>
+    <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="assets/plugins/tether/dist/js/tether.min.js"></script>
+    <!-- Required Fremwork -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Scrollbar JS-->
+    <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <!--classic JS-->
+    <script src="assets/plugins/classie/classie.js"></script>
+    <!-- notification -->
+    <script src="assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+    <!-- Sparkline charts -->
+    <script src="assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+    <!-- Counter js  -->
+    <script src="assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/plugins/countdown/js/jquery.counterup.js"></script>
+    <!-- Echart js -->
+    <!-- <script src="assets/plugins/charts/echarts/js/echarts-all.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script> -->
+    <!-- custom js -->
+    <script type="text/javascript" src="assets/js/main.min.js"></script>
+    <!-- <script type="text/javascript" src="assets/pages/dashboard.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script type="text/javascript" src="assets/pages/elements.js"></script>
+    <script src="assets/js/menu.min.js"></script>
+    <script src="https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyAuqtG8XhmKQPGoYpFi9dqZmhZTDWGCxE0"></script>
+    <script type="text/javascript">
+        var locations = [
+        ['<b style="color:blue;font-weight: 600;">Location 1</b><br>Address Line 1<br>Bismarck, ND 58501<br>Phone: 701-555-1234<br><a href="#" >Link<a> of some sort.', 11.8870258, 78.9045381, 4],
+        ['<b style="color:blue;font-weight: 600;">Location 2</b><br>Address Line 1<br>Fargo, ND 58103<br>Phone: 701-555-4321<br><a href="#" target="_blank">Link<a> of some sort.', 17.4248947, 78.4563544,5],
+        ['<b style="color:blue;font-weight: 600;">Location 3</b><br>Address Line 1<br>Fargo, ND 58103<br>Phone: 701-555-4321<br><a href="#" target="_blank">Link<a> of some sort.', 18.9248947, 78.9563544,5]
+        /*
+         * Next point on map
+         *   -Notice how the last number within the brackets incrementally increases from the prior marker
+         *   -Use http://itouchmap.com/latlong.html to get Latitude and Longitude of a specific address
+         *   -Follow the model below:
+         *      ['<b>Name 3</b><br>Address Line 1<br>City, ST Zipcode<br>Phone: ###-###-####<br><a href="#" target="_blank">Link<a> of some sort.', ##.####, -##.####, #]
+         */
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        /* Zoom level of your map */
+        center: new google.maps.LatLng(15.1466527, 78.2032041),
+        /* coordinates for the center of your map */
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+    }
+    </script>
+</body>
+
+</html>
