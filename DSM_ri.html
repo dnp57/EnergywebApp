@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tamil Nadu Generation and Distribution Corporation Limited (TANGEDCO)</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="https://www.tangedco.gov.in/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.tangedco.gov.in/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/simple-line-icons/css/simple-line-icons.css">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+    <!-- Weather css -->
+    <link href="assets/css/svg-weather.css" rel="stylesheet">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <style type="text/css" media="screen">
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th {
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body class="sidebar-mini fixed">
+    <div class="loader-bg">
+        <div class="loader-bar">
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- Navbar-->
+        <header class="main-header-top hidden-print">
+            <a href="index.html" class="logo">
+                <!-- <img class="img-fluid able-logo" style="    width: 58px;" src="https://upload.wikimedia.org/wikipedia/en/6/62/TANGEDCO_Logo.png" alt="Theme-logo"> --> <b>TANGEDCO</b></a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                <ul class="top-nav lft-nav">
+                    <li class="pc-rheader-submenu">
+                        <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                            <i class="icon-size-fullscreen"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Navbar Right Menu-->
+                <div class="navbar-custom-menu f-right">
+                    <ul class="top-nav">
+                        <!-- User Menu-->
+                        <li class="dropdown">
+                            <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
+                                <!-- <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span> -->
+                                <span>Hi, <b>Sheshu</b> <i class=" icofont icofont-simple-down"></i></span>
+                            </a>
+                            <ul class="dropdown-menu settings-menu">
+                                <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
+                                <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+                                <li><a href="index.html"><i class="icon-logout"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Side-Nav-->
+        <aside class="main-sidebar hidden-print ">
+            <section class="sidebar" id="sidebar-scroll">
+                <!-- Sidebar Menu-->
+                <ul class="sidebar-menu">
+                    <li class="nav-level">--- Navigation</li>
+                    <li class=" treeview">
+                        <a class="waves-effect waves-dark" href="energy_audit.html">
+                            <i class="icon-speedometer"></i><span> Energy Audit</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="energy_audit-2.html">
+                            <i class="icon-speedometer"></i><span> Energy Audit 2nd Screen</span>
+                        </a>
+                    </li>
+                    <li class=" treeview">
+                        <a class="waves-effect waves-dark" href="outage_management.html">
+                            <i class="icon-disc"></i><span> Outage Management</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="PPA.html">
+                            <i class="icon-disc"></i><span> Power Purchase</span>
+                        </a>
+                    </li>
+                    <li class="active treeview">
+                        <a class="waves-effect waves-dark" href="DSM.html">
+                            <i class="icon-disc"></i><span> DSM</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <!-- Container-fluid starts -->
+            <!-- Main content starts -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="main-header">
+                        <div class="col-md-12" style="margin-top: -38px;margin-left: -44px;">
+                            <div class="main-header">
+                                <!-- <h4>home</h4> -->
+                                <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                                    <li class="breadcrumb-item">
+                                        <a href="DSM.html">
+                                            <i class="icofont icofont-home"></i>
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="DSM.html">Demand Site Mgt</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">Reliability Index</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row dashboard-header">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-lg-12 table-responsive">
+                                    <table class="table " id="dataTable" width="100%" cellspacing="0">
+                                        <thead style="font-size:12px;" class="text-center">
+                                            <tr>
+                                                <th colspan="18" class="text-center">Reliability Indices for District Head Quarters in TANGEDCO for the month of April-2022</th>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <th rowspan="2" style="min-width: 41px">Sl.No </th>
+                                                <th rowspan="2" style="min-width: 88px;">Name of District Head Quarters</th>
+                                                <th rowspan="2" style="min-width: 115px;">Total No of 11KV Feeders</th>
+                                                <th rowspan="2" style="min-width: 116px;">Otage due to incoming supply failure (In Hrs)</th>
+                                                <th rowspan="2" style="min-width: 106px;">Cumulative Outage due to incoming supply failure(in Hrs) for FY 22-23</th>
+                                                <th rowspan="2" style="min-width: 63px;">Feeder Category</th>
+                                                <th colspan="3">Outage of 11 KV level (in Hrs)</th>
+                                                <th rowspan="2" style="border-right-width: 1px;">Cumulative</th>
+                                                <th colspan="4">Reliability for the Month of April-2022</th>
+                                                <th colspan="4">Reliability for cumulative period from Apr-22 to Apr-22</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <th style="min-width: 70px;">Scheduled Outage</th>
+                                                <th style="min-width: 70px;">UnScheduled Outage</th>
+                                                <th style="min-width: 60px;">Total</th>
+
+                                                <th style="min-width: 60px;">Sum of Outage duration of all feeders(in Hrs)</th>
+                                                <th style="min-width: 70px;">Outage duration of all feeders(in Hrs/Fdr)</th>
+                                                <th style="width: 70px;border-right-width: 1px;">Feeder Reliability Index at 11 KV feeder level in %</th>
+                                                <th style="width: 70px;border-right-width: 1px;">Reliability supply of power to consumers in %</th>
+
+                                                <th style="min-width: 60px;">Cumulative outgae duration of all feeder(in Hrs)for FY 22-23</th>
+                                                <th style="min-width: 70px;">Cumulative outgae duration of per feeder(in Hrs/Fdr)</th>
+                                                <th style="width: 70px;border-right-width: 1px;">Cumulative feeder Reliability Index at 11 KV feeder level in %</th>
+                                                <th style="width: 70px;border-right-width: 1px;">Cumulative Reliability of supply of power to consumer in %</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="font-size: 12px;font-weight: 600;" class="text-capitalize">
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>4</td>
+                                                <td>5</td>
+                                                <td>5a</td>
+                                                <td>6</td>
+                                                <td>7</td>
+                                                <td>8=6+7</td>
+                                                <td></td>
+                                                <td>9=5+8</td>
+                                                <td>10=9/3</td>
+                                                <td>11</td>
+                                                <td>12</td>
+                                                <td>13</td>
+                                                <td>14=13/3</td>
+                                                <td>15</td>
+                                                <td>16</td>
+                                            </tr>
+                                            <tr style="font-size: 12px;" class="text-capitalize">
+                                                <td>1</td>
+                                                <td>Chennai</td>
+                                                <td>38</td>
+                                                <td>38</td>
+                                                <td>34:38:00</td>
+                                                <td>34:38:00</td>
+                                                <td>542:46:00</td>
+                                                <td>410:41:00</td>
+                                                <td>953:27:00</td>
+                                                <td>953:27:00</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                            </tr>
+                                            <tr style="font-size: 12px;" class="text-capitalize">
+                                                <td>2</td>
+                                                <td>Chennai</td>
+                                                <td>38</td>
+                                                <td>38</td>
+                                                <td>34:38:00</td>
+                                                <td>34:38:00</td>
+                                                <td>542:46:00</td>
+                                                <td>410:41:00</td>
+                                                <td>953:27:00</td>
+                                                <td>953:27:00</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                            </tr>
+                                            <tr style="font-size: 12px;" class="text-capitalize">
+                                                <td>3</td>
+                                                <td>Chennai</td>
+                                                <td>38</td>
+                                                <td>38</td>
+                                                <td>34:38:00</td>
+                                                <td>34:38:00</td>
+                                                <td>542:46:00</td>
+                                                <td>410:41:00</td>
+                                                <td>953:27:00</td>
+                                                <td>953:27:00</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                            </tr>
+                                            <tr style="font-size: 12px;" class="text-capitalize">
+                                                <td>4</td>
+                                                <td>Chennai</td>
+                                                <td>38</td>
+                                                <td>38</td>
+                                                <td>34:38:00</td>
+                                                <td>34:38:00</td>
+                                                <td>542:46:00</td>
+                                                <td>410:41:00</td>
+                                                <td>953:27:00</td>
+                                                <td>953:27:00</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                            </tr>
+                                            <tr style="font-size: 12px;" class="text-capitalize">
+                                                <td>5</td>
+                                                <td>Chennai</td>
+                                                <td>38</td>
+                                                <td>38</td>
+                                                <td>34:38:00</td>
+                                                <td>34:38:00</td>
+                                                <td>542:46:00</td>
+                                                <td>410:41:00</td>
+                                                <td>953:27:00</td>
+                                                <td>953:27:00</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                                <td>988:05:00</td>
+                                                <td>26:00:08</td>
+                                                <td>96.52</td>
+                                                <td>96.39</td>
+                                            </tr>
+                                                                                      
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Required Jqurey -->
+    <script src="assets/plugins/Jquery/dist/jquery.min.js"></script>
+    <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="assets/plugins/tether/dist/js/tether.min.js"></script>
+    <!-- Required Fremwork -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Scrollbar JS-->
+    <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <!--classic JS-->
+    <script src="assets/plugins/classie/classie.js"></script>
+    <!-- notification -->
+    <script src="assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="assets/js/main.min.js"></script>
+    <script type="text/javascript" src="assets/pages/elements.js"></script>
+    <script src="assets/js/menu.min.js"></script>
+</body>
+
+</html>
