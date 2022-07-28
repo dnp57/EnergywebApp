@@ -1288,8 +1288,8 @@ Basic card CSS
 .common-img-bg {
   /* background-size: cover; */
   background: url("../images/authentication-bg.jpg") ;
-  background-size: 1600px 750px;
-  /* background-repeat: no-repeat; */
+  background-size: 1920px 920px;
+  background-repeat: no-repeat;
   
  }
 
