@@ -52,7 +52,11 @@ h1 { text-align:center; margin-top:150px;}
 
 /* Navigation Styles */
 
-nav { background: #2ba0db; }
+nav { 
+    background: #2ba0db;
+    display: flex;
+    align-content: space-between;
+ }
 
 nav ul {
   font-size: 0;
@@ -100,8 +104,8 @@ nav ul li ul li a:hover { background: #9db2bd59; }
 nav .fa.fa-angle-down { margin-left: 6px; }
 .tangedco-logo {
     width: 100%;
-    max-height: 588px;
-    margin-top: 37px;
+    max-height:695px;
+    margin-top:50px;
 }
 </style>
 </head>
@@ -114,8 +118,7 @@ nav .fa.fa-angle-down { margin-left: 6px; }
     <div class="wrapper">
         <!-- Navbar-->
         <header class="main-header-top hidden-print">
-            <a href="index.html" class="logo">
-                <img class="img-fluid able-logo" style="width: 64px;position: absolute;margin-left: -62px;" src="https://upload.wikimedia.org/wikipedia/en/6/62/TANGEDCO_Logo.png" alt="Theme-logo"> &nbsp;&nbsp;<!-- <span><b>TANGEDCO</b></span> --></a>
+            
             <!-- <nav class="navbar navbar-static-top">
               
                 <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
@@ -135,10 +138,12 @@ nav .fa.fa-angle-down { margin-left: 6px; }
                 </ul>
             </nav> -->
             <nav>
+                <a href="index.html" class="logo">
+                    <img class="img-fluid able-logo" style="width: 64px;position: absolute;margin-left: -62px;margin-top: 5px;" src="https://upload.wikimedia.org/wikipedia/en/6/62/TANGEDCO_Logo.png" alt="Theme-logo"> &nbsp;&nbsp;<!-- <span><b>TANGEDCO</b></span> --></a>
                 <div class="container">
                     <ul>
                         <!-- <li><a href="#">Home</a></li> -->
-                        <li> <a href="#">Organ<i class='fa fa-angle-down'></i></a>
+                        <li> <a href="#">Organization<i class='fa fa-angle-down'></i></a>
                             <ul>
                                 <li><a href="vision_and_strategy.html">Vision & Strategy</a></li>
                                 <li><a href="people_Human_Resources.html">People/Human Resources</a></li>
@@ -186,9 +191,10 @@ nav .fa.fa-angle-down { margin-left: 6px; }
                                 <li><a href="#">Data Privacy and Cyber Security</a></li>
                             </ul>
                         </li>
-                        <li style="border: 2px dotted rgb(243, 76, 9);
-    border-radius: 20px;"><a href="login.html">SignIn</a></li>
+                        <button type="button" class="btn btn-default waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="" style=" border-radius:20px;display: flex;float:right;margin-top:20px;text-transform: capitalize;"><a href="login.html">SignIn</a>
+                        </button>
                     </ul>
+                    
                 </div>
             </nav>
         </header>
@@ -196,7 +202,8 @@ nav .fa.fa-angle-down { margin-left: 6px; }
         <div class="content-wrapper1">          
             <div class="container-fluid">
                 <div class="row">
-                    <img class="tangedco-logo" src="https://images.news18.com/tamil/uploads/2021/09/tamilnadu.jpg?im=FitAndFill,width=1200,height=900">
+                    <!-- <img class="tangedco-logo" src="https://images.news18.com/tamil/uploads/2021/09/tamilnadu.jpg?im=FitAndFill,width=1200,height=900"> -->
+                    <img class="tangedco-logo"  src="assets/images/eb.jpg">
                 </div>
             </div>
         </div> 

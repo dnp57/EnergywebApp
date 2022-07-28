@@ -1286,9 +1286,12 @@ Basic card CSS
       Login Card css
  ======================= */
 .common-img-bg {
-  height: 100%;
-  background-size: cover;
-  background: url("../images/authentication-bg.jpg") no-repeat; }
+  /* background-size: cover; */
+  background: url("../images/authentication-bg.jpg") ;
+  background-size: 1600px 750px;
+  /* background-repeat: no-repeat; */
+  
+ }
 
 .login {
   position: fixed;

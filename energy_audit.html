@@ -79,7 +79,7 @@
                         <li class="dropdown">
                             <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
                                 <!-- <span><img class="img-circle " src="assets/images/avatar-1.png" style="width:40px;" alt="User Image"></span> -->
-                                <span>Hi, <b>Sivagami</b> <i class=" icofont icofont-simple-down"></i></span>
+                                <span>Hi, <b>Tamil</b> <i class=" icofont icofont-simple-down"></i></span>
                             </a>
                             <ul class="dropdown-menu settings-menu">
                                 <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
@@ -252,9 +252,8 @@
                         <div class="card dashboard-product">
                             <span>Input Power</span>
                             <h2 class="dashboard-total-products">200KWA</h2>
-                            <span class="label label-warning">Sales</span><small>Arriving Today</small>
                             <div class="side-box">
-                                <i class="ti-signal text-warning-color"></i>
+                                <i class="icon-energy  text-warning-color"></i>
                             </div>
                         </div>
                     </div>
@@ -262,9 +261,8 @@
                         <div class="card dashboard-product">
                             <span>Consumed Power</span>
                             <h2 class="dashboard-total-products">180KWA</h2>
-                            <span class="label label-primary">Views</span><small>View Today</small>
                             <div class="side-box ">
-                                <i class="ti-signal text-primary-color"></i>
+                                <i class="icon-disc text-primary-color"></i>
                             </div>
                         </div>
                     </div>
@@ -272,7 +270,6 @@
                         <div class="card dashboard-product">
                             <span>Billed Power</span>
                             <h2 class="dashboard-total-products">180KWA</h2>
-                            <span class="label label-success">Sales</span><small>Reviews</small>
                             <div class="side-box">
                                 <i class="ti-signal text-success-color"></i>
                             </div>
@@ -282,7 +279,6 @@
                         <div class="card dashboard-product">
                             <span>Collected Power</span>
                             <h2 class="dashboard-total-products">130KWA</h2>
-                            <span class="label label-danger">Sales</span><small>Reviews</small>
                             <div class="side-box">
                                 <i class="ti-signal text-danger-color"></i>
                             </div>
@@ -292,7 +288,6 @@
                         <div class="card dashboard-product">
                             <span>Proc Generation</span>
                             <h2 class="dashboard-total-products">50KWA</h2>
-                            <span class="label label-danger">Sales</span><small>Reviews</small>
                             <div class="side-box">
                                 <i class="ti-signal text-danger-color"></i>
                             </div>
@@ -302,7 +297,6 @@
                         <div class="card dashboard-product">
                             <span>Line Loss</span>
                             <h2 class="dashboard-total-products">0KWA</h2>
-                            <span class="label label-danger">Sales</span><small>Reviews</small>
                             <div class="side-box">
                                 <i class="ti-direction-alt text-danger-color"></i>
                             </div>
@@ -312,7 +306,6 @@
                         <div class="card dashboard-product">
                             <span>AT&C Loss</span>
                             <h2 class="dashboard-total-products">0KWA</h2>
-                            <span class="label label-danger">Sales</span><small>Reviews</small>
                             <div class="side-box">
                                 <i class="ti-direction-alt text-danger-color"></i>
                             </div>
@@ -322,7 +315,6 @@
                         <div class="card dashboard-product">
                             <span>Collection Loss</span>
                             <h2 class="dashboard-total-products">0KWA</h2>
-                            <span class="label label-danger">Sales</span><small>Reviews</small>
                             <div class="side-box">
                                 <i class="ti-direction-alt text-danger-color"></i>
                             </div>
@@ -346,14 +338,12 @@
                             <div class="card dashboard-product">
                                 <span class="txt-warning">% Unmetered Connections</span>
                                 <h2 class="dashboard-total-products">20%</h2>
-                                <span class="label label-danger">Sales</span><small>Reviews</small>
                             </div>
                         </div>
                         <div class="card" style="height: 120px;">
                             <div class="card dashboard-product">
                                 <span class="txt-warning">% Unmetered Consumption</span>
                                 <h2 class="dashboard-total-products">30%</h2>
-                                <span class="label label-danger">Sales</span><small>Reviews</small>
                             </div>
                             <!-- <div class="card-block horizontal-card-img d-flex">
                                 <div class="d-inlineblock  p-l-20">
@@ -474,13 +464,13 @@
         }
     });
     // chart code starts
-    var xValues = ["Single", "3 Phase WC", "3 Phase LTCT", "3 Phase CTPT"];
+    var xValues = ["Single :55", "3 Phase WC :49", "3 Phase LTCT :44", "3 Phase CTPT :24"];
     var yValues = [55, 49, 44, 24];
-    var xValues2 = ["Residential", "Industrial", "Commercials", "Huts", "Agriculture"];
+    var xValues2 = ["Residential :65", "Industrial :40", "Commercials :44", "Huts :15", "Agriculture :25"];
     var yValues2 = [65, 40, 44, 15, 25];
     var barColors = [
         "#b91d47",
-        "#00aba9",
+        "#00aba9", 
         "#2b5797",
         "#e8c3b9",
         "#1e7145"
@@ -497,6 +487,7 @@
         type: "pie",
         data: {
             labels: xValues,
+            
             datasets: [{
                 backgroundColor: barColors,
                 data: yValues
