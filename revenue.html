@@ -485,6 +485,9 @@
 
                                 <h5>Subsidised Power</h5>
                                 <h5>123 Units</h5>
+                                <canvas id="north-america-chart"></canvas>
+                                <p style="text-align:center">Current Week</p>
+                                <div id="north-america-legend"></div>
                             </div>
                             
                         </div>
@@ -594,7 +597,7 @@
         }
     });
     new Chart("myChart2", {
-        type: "pie",
+        type: "doughnut",
         data: {
             labels: xValues2,
             fill: false,
@@ -646,6 +649,148 @@
             }
         }
     });
+
+
+
+
+    if ($("#north-america-chart").length) {
+      var areaData = {
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [100, 50, 10],
+            backgroundColor: [
+               "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+          }
+        ]
+      };
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        segmentShowStroke: false,
+        cutoutPercentage: 78,
+        elements: {
+          arc: {
+              borderWidth: 4
+          }
+        },      
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        legendCallback: function(chart) { 
+          var text = [];
+          text.push('<div class="report-chart">');
+         
+            text.push('</div>');
+           
+            text.push('</div>');
+          text.push('</div>');
+          return text.join("");
+        },
+      }
+      var northAmericaChartPlugins = {
+        beforeDraw: function(chart) {
+          var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+      
+          ctx.restore();
+          var fontSize = 3.125;
+          ctx.font = "500 " + fontSize + "em sans-serif";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#13381B";
+      
+          var text = "90",
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+      
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+      var northAmericaChartCanvas = $("#north-america-chart").get(0).getContext("2d");
+      var northAmericaChart = new Chart(northAmericaChartCanvas, {
+        type: 'doughnut',
+        data: areaData,
+        options: areaOptions,
+        plugins: northAmericaChartPlugins
+      });
+      document.getElementById('north-america-legend').innerHTML = northAmericaChart.generateLegend();
+    }
+    if ($("#north-america-chart-dark").length) {
+      var areaData = {
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [100, 50, 10],
+            backgroundColor: [
+               "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+          }
+        ]
+      };
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        segmentShowStroke: false,
+        cutoutPercentage: 78,
+        elements: {
+          arc: {
+              borderWidth: 4
+          }
+        },      
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        legendCallback: function(chart) { 
+          var text = [];
+          text.push('<div class="report-chart">');
+           
+            text.push('</div>');
+           
+            text.push('</div>');
+          text.push('</div>');
+          return text.join("");
+        },
+      }
+      var northAmericaChartPlugins = {
+        beforeDraw: function(chart) {
+          var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+      
+          ctx.restore();
+          var fontSize = 3.125;
+          ctx.font = "500 " + fontSize + "em sans-serif";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#fff";
+      
+          var text = "90",
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+      
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+      var northAmericaChartCanvas = $("#north-america-chart-dark").get(0).getContext("2d");
+      var northAmericaChart = new Chart(northAmericaChartCanvas, {
+        type: 'doughnut',
+        data: areaData,
+        options: areaOptions,
+        plugins: northAmericaChartPlugins
+      });
+      document.getElementById('north-america-legend').innerHTML = northAmericaChart.generateLegend();
+    }
+
+
     </script>
 </body>
 
