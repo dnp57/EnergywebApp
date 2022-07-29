@@ -105,7 +105,11 @@
             <section class="sidebar" id="sidebar-scroll">
                 <!-- Sidebar Menu-->
                 <ul class="sidebar-menu">
-                    <li class="nav-level">--- Navigation</li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="home.html">
+                            <i class="icon-home"></i><span>Home</span>
+                        </a>
+                    </li>
                     <li class=" treeview">
                         <a class="waves-effect waves-dark" href="#!"><i class="icon-speedometer"></i><span> Energy Audit</span><i class="icon-arrow-down"></i></a>
                         <ul class="treeview-menu">
@@ -354,17 +358,17 @@
                         </div>
 
                         <div class="col-xs-6 col-md-6">
-                            <div class="card-block" style="margin-top:80px;">
+                            <div class="card-block" style="margin-top:150px;">
                                 <div class="user-block-2-activities">
                                    <div class="user-block-2-active">Last Recharge
                                       <!-- <i class="icofont icofont-clock-time"></i> Recent Activities -->
-                                      <label class="label label-primary">1000</label>
+                                      <label class="label label-primary">5000</label>
                                    </div>
                                 </div>
                                 <div class="user-block-2-activities">
                                    <div class="user-block-2-active">
                                     Balance
-                                      <label class="label label-primary">5000</label>
+                                      <label class="label label-primary">1000</label>
                                    </div>
                                 </div>
         
@@ -375,7 +379,8 @@
                                    </div>
         
                                 </div>
-                               
+                                <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="" style="text-transform:capitalize;margin-left:30px;">Recharge
+                                </button>
                              </div>
                         </div>
                     </div>
@@ -416,23 +421,26 @@
                     <div class="row">
                         <div class="col-xs-4" >
                         <div class="card-block" style="text-align: center;">
-                        <label for="exampleSelect1" class="form-control-label">Geneated</label>
-                        <canvas id="myChart7" style="width:100%;height:300px;"></canvas><br>
-                        <label class="label label-primary">80kwh</label>
+                      <h5>  <label for="exampleSelect1" class="form-control-label">Geneated</label></h5>
+                        <canvas id="chart1-america-chart" style="width:100%;height:200px;"></canvas><br>
+                        <div id="chart1-america-legend"></div>
+                        <!-- <label class="label label-primary">85kwh</label> -->
                         </div>
                         </div>
                         <div class="col-xs-4">
                         <div class="card-block" style="text-align: center;">
-                        <label for="exampleSelect1" class="form-control-label">Consumed</label>
-                        <canvas id="myChart8" style="width:100%;height:300px;"></canvas><br> 
-                        <label class="label label-primary">125kwh</label>
+                            <h5>   <label for="exampleSelect1" class="form-control-label">Consumed</label></h5>
+                            <canvas id="chart2-america-chart" style="width:100%;height:200px;"></canvas><br>
+                            <div id="chart2-america-legend"></div>
+                        <!-- <label class="label label-primary">125kwh</label> -->
                         </div>
                         </div>
                         <div class="col-xs-4">
                          <div class="card-block" style="text-align: center;">
-                         <label for="exampleSelect1" class="form-control-label">Net Metering</label>
-                        <canvas id="myChart9" style="width:100%;height:300px;"></canvas><br>
-                         <label class="label label-primary">45kwh</label>
+                            <h5>   <label for="exampleSelect1" class="form-control-label">Net Metering</label></h5>
+                            <canvas id="chart3-america-chart" style="width:100%;height:200px;"></canvas><br>
+                            <div id="chart3-america-legend"></div>
+                            <!-- <label class="label label-primary">45kwh</label> -->
                         </div>
                         </div>
                         </div>
@@ -514,6 +522,11 @@
     var yValues1 = [2, 2, 3, 4, 4, 8, 18,25,30,28,22,19,16,16,15,15,20,25,30,28,12,8,6,4];
 
 
+    var yValues3 = [5000,1000];
+    var xValues3 = ["last recharge","balance"];
+
+
+
     var barColors = [
         "#b91d47",
         "#00aba9",
@@ -580,11 +593,12 @@
     new Chart("myChart4", {
         type: "pie",
         data: {
+            labels:xValues3,
             
             
             datasets: [{
                 backgroundColor: barColors2,
-                data: yValues2
+                data: yValues3
             }]
         },
         options: {
@@ -762,7 +776,7 @@
           ctx.textBaseline = "middle";
           ctx.fillStyle = "#13381B";
       
-          var text = "80KWH",
+          var text = "80kwh",
               textX = Math.round((width - ctx.measureText(text).width) / 2),
               textY = height / 2;
       
@@ -1123,6 +1137,431 @@
         plugins: northAmericaChartPlugins
       });
       document.getElementById('west-america-legend').innerHTML = northAmericaChart.generateLegend();
+    }
+
+
+
+    
+
+    if ($("#chart1-america-chart").length) {
+      var areaData = {
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [85,15],
+            backgroundColor: [
+               "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+          }
+        ]
+      };
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        segmentShowStroke: false,
+        cutoutPercentage: 78,
+        elements: {
+          arc: {
+              borderWidth: 4
+          }
+        },      
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        legendCallback: function(chart) { 
+          var text = [];
+          text.push('<div class="report-chart">');
+         
+            text.push('</div>');
+           
+            text.push('</div>');
+          text.push('</div>');
+          return text.join("");
+        },
+      }
+      var northAmericaChartPlugins = {
+        beforeDraw: function(chart) {
+          var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+      
+          ctx.restore();
+          var fontSize = 2.125;
+          ctx.font = "500 " + fontSize + "em sans-serif";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#13381B";
+      
+          var text = "85kwh",
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+      
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+      var northAmericaChartCanvas = $("#chart1-america-chart").get(0).getContext("2d");
+      var northAmericaChart = new Chart(northAmericaChartCanvas, {
+        type: 'doughnut',
+        data: areaData,
+        options: areaOptions,
+        plugins: northAmericaChartPlugins
+      });
+      document.getElementById('chart1-america-legend').innerHTML = northAmericaChart.generateLegend();
+    }
+    if ($("#chart1-america-chart-dark").length) {
+      var areaData = {
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [100, 50, 10],
+            backgroundColor: [
+               "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+          }
+        ]
+      };
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        segmentShowStroke: false,
+        cutoutPercentage: 78,
+        elements: {
+          arc: {
+              borderWidth: 4
+          }
+        },      
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        legendCallback: function(chart) { 
+          var text = [];
+          text.push('<div class="report-chart">');
+           
+            text.push('</div>');
+           
+            text.push('</div>');
+          text.push('</div>');
+          return text.join("");
+        },
+      }
+      var northAmericaChartPlugins = {
+        beforeDraw: function(chart) {
+          var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+      
+          ctx.restore();
+          var fontSize = 3.125;
+          ctx.font = "500 " + fontSize + "em sans-serif";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#fff";
+      
+          var text = "90",
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+      
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+      var northAmericaChartCanvas = $("#chart1-america-chart-dark").get(0).getContext("2d");
+      var northAmericaChart = new Chart(northAmericaChartCanvas, {
+        type: 'doughnut',
+        data: areaData,
+        options: areaOptions,
+        plugins: northAmericaChartPlugins
+      });
+      document.getElementById('chart1-america-legend').innerHTML = northAmericaChart.generateLegend();
+    }
+
+
+
+    
+    
+
+    if ($("#chart2-america-chart").length) {
+      var areaData = {
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [125,25],
+            backgroundColor: [
+               "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+          }
+        ]
+      };
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        segmentShowStroke: false,
+        cutoutPercentage: 78,
+        elements: {
+          arc: {
+              borderWidth: 4
+          }
+        },      
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        legendCallback: function(chart) { 
+          var text = [];
+          text.push('<div class="report-chart">');
+         
+            text.push('</div>');
+           
+            text.push('</div>');
+          text.push('</div>');
+          return text.join("");
+        },
+      }
+      var northAmericaChartPlugins = {
+        beforeDraw: function(chart) {
+          var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+      
+          ctx.restore();
+          var fontSize = 2.125;
+          ctx.font = "500 " + fontSize + "em sans-serif";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#13381B";
+      
+          var text = "125kwh",
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+      
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+      var northAmericaChartCanvas = $("#chart2-america-chart").get(0).getContext("2d");
+      var northAmericaChart = new Chart(northAmericaChartCanvas, {
+        type: 'doughnut',
+        data: areaData,
+        options: areaOptions,
+        plugins: northAmericaChartPlugins
+      });
+      document.getElementById('chart2-america-legend').innerHTML = northAmericaChart.generateLegend();
+    }
+    if ($("#chart1-america-chart-dark").length) {
+      var areaData = {
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [100, 50, 10],
+            backgroundColor: [
+               "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+          }
+        ]
+      };
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        segmentShowStroke: false,
+        cutoutPercentage: 78,
+        elements: {
+          arc: {
+              borderWidth: 4
+          }
+        },      
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        legendCallback: function(chart) { 
+          var text = [];
+          text.push('<div class="report-chart">');
+           
+            text.push('</div>');
+           
+            text.push('</div>');
+          text.push('</div>');
+          return text.join("");
+        },
+      }
+      var northAmericaChartPlugins = {
+        beforeDraw: function(chart) {
+          var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+      
+          ctx.restore();
+          var fontSize = 3.125;
+          ctx.font = "500 " + fontSize + "em sans-serif";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#fff";
+      
+          var text = "90",
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+      
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+      var northAmericaChartCanvas = $("#chart2-america-chart-dark").get(0).getContext("2d");
+      var northAmericaChart = new Chart(northAmericaChartCanvas, {
+        type: 'doughnut',
+        data: areaData,
+        options: areaOptions,
+        plugins: northAmericaChartPlugins
+      });
+      document.getElementById('chart2-america-legend').innerHTML = northAmericaChart.generateLegend();
+    }
+
+
+
+    
+    
+
+    if ($("#chart3-america-chart").length) {
+      var areaData = {
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [45,30],
+            backgroundColor: [
+               "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+          }
+        ]
+      };
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        segmentShowStroke: false,
+        cutoutPercentage: 78,
+        elements: {
+          arc: {
+              borderWidth: 4
+          }
+        },      
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        legendCallback: function(chart) { 
+          var text = [];
+          text.push('<div class="report-chart">');
+         
+            text.push('</div>');
+           
+            text.push('</div>');
+          text.push('</div>');
+          return text.join("");
+        },
+      }
+      var northAmericaChartPlugins = {
+        beforeDraw: function(chart) {
+          var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+      
+          ctx.restore();
+          var fontSize = 2.125;
+          ctx.font = "500 " + fontSize + "em sans-serif";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#13381B";
+      
+          var text = "45kwh",
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+      
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+      var northAmericaChartCanvas = $("#chart3-america-chart").get(0).getContext("2d");
+      var northAmericaChart = new Chart(northAmericaChartCanvas, {
+        type: 'doughnut',
+        data: areaData,
+        options: areaOptions,
+        plugins: northAmericaChartPlugins
+      });
+      document.getElementById('chart3-america-legend').innerHTML = northAmericaChart.generateLegend();
+    }
+    if ($("#chart3-america-chart-dark").length) {
+      var areaData = {
+        labels: ["Jan", "Feb", "Mar"],
+        datasets: [{
+            data: [100, 50, 10],
+            backgroundColor: [
+               "#4B49AC","#FFC100", "#248AFD",
+            ],
+            borderColor: "rgba(0,0,0,0)"
+          }
+        ]
+      };
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        segmentShowStroke: false,
+        cutoutPercentage: 78,
+        elements: {
+          arc: {
+              borderWidth: 4
+          }
+        },      
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        legendCallback: function(chart) { 
+          var text = [];
+          text.push('<div class="report-chart">');
+           
+            text.push('</div>');
+           
+            text.push('</div>');
+          text.push('</div>');
+          return text.join("");
+        },
+      }
+      var northAmericaChartPlugins = {
+        beforeDraw: function(chart) {
+          var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+      
+          ctx.restore();
+          var fontSize = 3.125;
+          ctx.font = "500 " + fontSize + "em sans-serif";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "#fff";
+      
+          var text = "90",
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+      
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+      var northAmericaChartCanvas = $("#chart3-america-chart-dark").get(0).getContext("2d");
+      var northAmericaChart = new Chart(northAmericaChartCanvas, {
+        type: 'doughnut',
+        data: areaData,
+        options: areaOptions,
+        plugins: northAmericaChartPlugins
+      });
+      document.getElementById('chart3-america-legend').innerHTML = northAmericaChart.generateLegend();
     }
     </script>
     

@@ -92,7 +92,11 @@
             <section class="sidebar" id="sidebar-scroll">
                 <!-- Sidebar Menu-->
                 <ul class="sidebar-menu">
-                    <li class="nav-level">--- Navigation</li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="home.html">
+                            <i class="icon-home"></i><span>Home</span>
+                        </a>
+                    </li>
                     <li class=" treeview">
                         <a class="waves-effect waves-dark" href="#!"><i class="icon-speedometer"></i><span> Energy Audit</span><i class="icon-arrow-down"></i></a>
                         <ul class="treeview-menu">
@@ -285,10 +289,10 @@
 
 
 <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="row">
         <div class="col-lg-12">
-            <div class="card dashboard-product" style="height:175px;">
+            <div class="card dashboard-product" style="height:405px;">
                 <span>New Assets</span>
                 <h2 class="dashboard-total-products">00</h2>
                 <!-- <span class="label label-warning"></span><small></small> -->
@@ -298,24 +302,37 @@
             </div>
         </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-12">
                 <div class="card dashboard-product" style="height:175px;">
                     <span>Transformers</span>
                     <h2 class="dashboard-total-products">00</h2>
                     <span class="label label-warning"></span><small></small>
                     <div class="side-box">
-                        <!-- <i class="ti-signal text-warning-color"></i> -->
                     </div>
                 </div>
             </div>
-            </div>
+            </div> -->
     </div>
-    <div class="col-lg-8 col-md-8">
+    <div class="col-lg-9 col-md-9">
       <!-- Contextual classes table starts -->
       <div class="card">
         <div class="card-header">
            <h5 class="card-title">Type of Asset</h5>
+        </div>
+        <div class="form-group col-md-6" style="width: 100%;">
+            <!-- <label for="exampleSelect1" class="form-control-label">Tranformer</label> -->
+            <select class="form-control " id="exampleSelect1">
+                <option>Tranformers</option>
+                <option>Resistors</option>
+                <option>Transistors</option>
+                <option>Fuse</option>
+                <option>Meter</option>
+                <option>Capacitors</option>
+                <option>Cables</option>
+
+
+            </select>
         </div>
         <div class="card-block">
            <div class="row">
@@ -432,7 +449,7 @@
       
       <div class="card">
         <div class="card-block" style="min-width:600px;">
-            <canvas id="myChart" style="position: relative; height:32vh; width:80vw; "></canvas>
+            <canvas id="myChart" style="position: relative; height:36vh; width:80vw; "></canvas>
         </div>
     </div>
    </div>
@@ -655,7 +672,7 @@
                 borderColor: '#2C7EB5',
                 
                 
-                backgroundColor: '#DEE8F4',
+                backgroundColor: '#00aba9',
                 lineTension:0.3,
                 data: yValues
             }]
