@@ -268,7 +268,7 @@
                     <div class="col-xs-12 col-md-8" >
                         <div class="card" >
                             <div class="card-block" style="height: 220px">
-                                <canvas id="myChart2" style="position: relative; height:40vh; width:80vw; "></canvas>
+                                <canvas id="myChart-ashoknagar" style="position: relative; height:40vh; width:80vw; "></canvas>
                             </div>
                         </div>
                     </div>
@@ -328,7 +328,7 @@
                     <div class="col-xs-12 col-md-6" >
                         <div class="card" >
                             <div class="card-block" style="height: 220px">
-                                <canvas id="myChart3" style="position: relative; height:40vh; width:80vw; "></canvas>
+                                <canvas id="myChartthird" style="position: relative; height:40vh; width:80vw; "></canvas>
                             </div>
                         </div>
                     </div>
@@ -394,7 +394,7 @@
                     <div class="col-xs-12 col-md-4" >
                         <div class="card" >
                             <div class="card-block" style="height: 220px">
-                                <canvas id="myChart5" style="position: relative; height:40vh; width:80vw; "></canvas>
+                                <canvas id="myChart-load" style="position: relative; height:40vh; width:80vw; "></canvas>
                             </div>
                         </div>
                     </div>
@@ -404,7 +404,7 @@
                     <div class="col-xs-12 col-md-4" >
                         <div class="card" >
                             <div class="card-block" style="height: 220px">
-                                <canvas id="myChart6" style="position: relative; height:40vh; width:80vw; "></canvas>
+                                <canvas id="myChartphase" style="position: relative; height:40vh; width:80vw; "></canvas>
                             </div>
                         </div>
                     </div>
@@ -415,7 +415,7 @@
                     <div class="col-xs-12 col-md-4" >
                         <div class="card" >
                             <div class="card-block" style="height: 220px">
-                                <canvas id="myChart7" style="position: relative; height:40vh; width:80vw; "></canvas>
+                                <canvas id="myChart-current" style="position: relative; height:40vh; width:80vw; "></canvas>
                             </div>
                         </div>
                     </div></a>
@@ -485,6 +485,28 @@
     var yValues = [0, 1, 3, 2, 1, 6, 3, 6 ];
     var xValues2 = ["Residential", "Industrail", "Commercials", "Hats", "Agriculture"];
     var yValues2 = [65, 40, 44, 15, 25];
+
+    var xValuesashoknagar = ["11:45:36", "12:00:00", "12:14:24", "12:28:48", "12:43:12", "12:57:36", "13:12:00", "13:26:36", "13:40:48",];
+    var yValuesashoknagar = [, 55, 55, 53, 50, 45, 48, 55,,,60 ];
+
+    var xValuescurrent = ["11:45:36", "12:00:00", "12:14:24", "12:28:48", "12:43:12", "12:57:36", "13:12:00", "13:26:36", "13:40:48",];
+    var yValuescurrent = [, 2.2, 2, 1.8, 2.3, 2.5, 2.2, 2,,,3 ];
+
+    var xValuesload = ["11:45:36", "12:00:00", "12:14:24", "12:28:48", "12:43:12", "12:57:36", "13:12:00", "13:26:36", "13:40:48",];
+    var yValuesload = [, 55, 55, 53, 50, 45, 48, 55,,,60 ];
+
+
+    var xValuesphase = ["0","50","100","150","200","250","300","350","400"];
+    var y1Valuesphase = [0.8,0.2,-0.8,-1,-0.8,0.2,0.8,1,,,1.5,-1.5];
+    var y2Valuesphase = [0,0.8,1,0.5,-0.3,-1,-0.8,0];
+    var y3Valuesphase = [-0.9,-0.8,-0.3,0.5,1,0.8,0,-1];
+    // var y4Values = [220,250,270,270,190,280,260,220,260,180,180,280,270,200,240,280,250,230,180,210,290,290,240,300];
+
+
+    var xValuesthird = ["0","100","200","300","400","",];
+    var y1Valuesthird = [0,1.5,-0.3,-1.5,0,,2,-2];
+    var y2Valuesthird = [0,-1,1,-1,1,];
+
     var barColors = [
         "#b91d47",
         "#00aba9",
@@ -642,28 +664,68 @@
         
     });
 
-    new Chart("myChart5", {
+
+    new Chart("myChart-ashoknagar", {
         type: "line",
         data: {
-            labels: xValues,
+            labels: xValuesashoknagar,
             datasets: [{
+                label: 'Power Consumption',
                 backgroundColor: barColors,
                 borderColor: '#2C7EB5',
+                fill:false,
                 
                 
                 backgroundColor: '#DEE8F4',
                 lineTension:0.3,
-                data: yValues
+                data: yValuesashoknagar
             }]
         },
         options: {
-            title: {
-                display: true,
-                text: "Load Balancing",
-                
-           },
         responsive: true,
         maintainAspectRatio: false,
+        title: {
+                display: true,
+                text: "Ashoknagar Power Supply",
+                
+           },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    
+                }
+            }]
+        }
+    }
+
+        
+    });
+
+    new Chart("myChart-load", {
+        type: "line",
+        data: {
+            labels: xValuesload,
+            datasets: [{
+                label: 'Power Consumption',
+                backgroundColor: barColors,
+                borderColor: '#2C7EB5',
+                fill:false,
+                
+                
+                backgroundColor: '#DEE8F4',
+                lineTension:0.3,
+                data: yValuesload
+            }]
+        },
+        options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+                display: true,
+                text: "Load Balance",
+                
+           },
         scales: {
             yAxes: [{
                 ticks: {
@@ -712,27 +774,30 @@
         
     });
 
-    new Chart("myChart7", {
+    
+    new Chart("myChart-current", {
         type: "line",
         data: {
-            labels: xValues,
+            labels: xValuescurrent,
             datasets: [{
+                label: 'Current',
                 backgroundColor: barColors,
                 borderColor: '#2C7EB5',
-                text: "Current Balancing",
+                fill:false,
                 
                 
                 backgroundColor: '#DEE8F4',
                 lineTension:0.3,
-                data: yValues
+                data: yValuescurrent
             }]
         },
         options: {
-            title: {
-                display: true,
-              text: "Current Balancing",
-           },
         responsive: true,
+        title: {
+                display: true,
+                text: "Current Balance",
+                
+           },
         maintainAspectRatio: false,
         scales: {
             yAxes: [{
@@ -745,6 +810,102 @@
     }
 
         
+    });
+
+    new Chart("myChartphase", {
+      type: "line",
+      data: {
+        labels: xValuesphase,
+        datasets: [{
+          label: 'Phase-1',
+          borderColor: '#2C7EB5',
+          lineTension: 0.3,
+          data: y1Valuesphase,
+          fill:false,
+        },
+        {
+          label: 'Phase-2',
+          borderColor: '#f54242',
+          lineTension: 0.3,
+          data: y2Valuesphase,
+          fill:false,
+        },
+        {
+          label: 'Phase-3',
+          borderColor: "yellow",
+          // backgroundColor: '#DEE8F4',
+          lineTension: 0.3,
+          data: y3Valuesphase,
+          fill:false,
+        }]
+      },
+      options: {
+        responsive: true,
+        title: {
+                display: true,
+                text: "Phase Balance",
+                
+           },
+        maintainAspectRatio: false,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false,
+              display: true
+            }
+          }],
+          y: {
+            suggestedMin: 150
+          }
+        }
+      }
+    });
+
+
+    new Chart("myChartthird", {
+      type: "line",
+      data: {
+        labels: xValuesthird,
+        datasets: [
+            
+        {
+          label: 'Phase-1',
+          borderColor: '#f54242',
+          lineTension: 0.3,
+          data: y2Valuesthird,
+          fill:false,
+        },
+        
+        {
+          label: '3rd Harmonic',
+          borderColor: '#2C7EB5',
+          lineTension: 0.3,
+          data: y1Valuesthird,
+          fill:false,
+        },
+      
+       ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+                display: true,
+                text: "3rd Harmonic Wave",
+                
+           },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false,
+              display: true
+            }
+          }],
+          y: {
+            suggestedMin: 150
+          }
+        }
+      }
     });
     
     // new Chart("myChart2", {
@@ -839,7 +1000,7 @@
 
 
     
-    // new Chart("myChart7", {
+    // new Chart("myChart-current", {
     //     type: "line",
     //     data: {
            

@@ -268,7 +268,9 @@
                     <div class="col-xs-12 col-md-12" >
                         <div class="card" >
                             <div class="card-block" style="height: 220px">
-                                <canvas id="myChart" style="position: relative; height:40vh; width:80vw; "></canvas>
+                                <p style="font-size: medium"><b>3rd Harmonic Waves</b></p>
+
+                                <canvas id="myChartthird" style="position: relative; height:40vh; width:80vw; "></canvas>
                             </div>
                         </div>
                     </div>
@@ -285,7 +287,9 @@
                         <div class="card" >
                             <div class="card-block" style="height: 220px">
                                
-                               <p style="font-size: medium"><b>Fourier Analysis of The 3rd Harmonic Waveform</b></p>
+                               <p style="font-size: medium"><b>Fourier Waves</b></p>
+                               <canvas id="myChartthird1" style="position: relative; height:40vh; width:80vw; "></canvas>
+
 
                             </div>
                         </div>
@@ -426,162 +430,102 @@
         }
     });
     // chart code starts
-    var xValues = ["1", "3", "5", "7", "9", "11", "13", "15", ];
-    var yValues = [0, 1, 3, 2, 1, 6, 3, 6 ];
-    var xValues2 = ["Residential", "Industrail", "Commercials", "Hats", "Agriculture"];
-    var yValues2 = [65, 40, 44, 15, 25];
+    var xValuesthird = ["0","100","200","300","400","",];
+    var y1Valuesthird = [0,1.5,-0.3,-1.5,0,,2,-2];
+    var y2Valuesthird = [0,-1,1,-1,1,];
+    // var y3Valuesthird = [-0.9,-0.8,-0.3,0.5,1,0.8,0,-1];
+    // var y4Values = [220,250,270,270,190,280,260,220,260,180,180,280,270,200,240,280,250,230,180,210,290,290,240,300];
+
     var barColors = [
-        "#b91d47",
-        "#00aba9",
-        "#2b5797",
-        "#e8c3b9",
-        "#1e7145"
+      "#b91d47",
+      "#00aba9",
+      "#2b5797",
+      "#e8c3b9",
+      "#1e7145"
     ];
     var barColors2 = [
-        "orange",
-        "#00aba9",
-        "#2b5797",
-        "#e8c3b9",
-        "#1e7145"
+      "orange",
+      "#00aba9",
+      "#2b5797",
+      "#e8c3b9",
+      "#1e7145"
     ];
 
-    new Chart("myChart", {
-        type: "line",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                borderColor: '#2C7EB5',
-                
-                
-                backgroundColor: '#DEE8F4',
-                lineTension:0.3,
-                data: yValues
-            }]
+    new Chart("myChartthird", {
+      type: "line",
+      data: {
+        labels: xValuesthird,
+        datasets: [
+            
+        {
+          label: 'Phase-1',
+          borderColor: '#f54242',
+          lineTension: 0.3,
+          data: y2Valuesthird,
+          fill:false,
         },
-        options: {
+        
+        {
+          label: '3rd Harmonic',
+          borderColor: '#2C7EB5',
+          lineTension: 0.3,
+          data: y1Valuesthird,
+          fill:false,
+        },
+      
+       ]
+      },
+      options: {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true,
-                    
-                }
-            }]
+          yAxes: [{
+            ticks: {
+              beginAtZero: false,
+              display: true
+            }
+          }],
+          y: {
+            suggestedMin: 150
+          }
         }
-    }
+      }
+    });
 
+
+    new Chart("myChartthird1", {
+      type: "line",
+      data: {
+        labels: xValuesthird,
+        datasets: [
+            
+      
         
-    });
-    new Chart("myChart2", {
-        type: "line",
-        data: {
-            fill: false,
-            datasets: [{
-                backgroundColor: barColors2,
-                data: yValues2
-            }]
+        {
+          label: 'Fourier Wave',
+          borderColor: '#2C7EB5',
+          lineTension: 0.3,
+          data: y1Valuesthird,
+          fill:false,
         },
-        options: {
-            title: {
-                display: true,
-                text: "Third Harmonic Wave Analysis"
+      
+       ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false,
+              display: true
             }
+          }],
+          y: {
+            suggestedMin: 150
+          }
         }
-    });
-
-
-    new Chart("myChart3", {
-        type: "line",
-        data: {
-           
-            fill: false,
-            datasets: [{
-                backgroundColor: barColors2,
-                data: yValues2
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "3RD HARMONIC"
-            }
-        }
-    });
-
-    new Chart("myChart4", {
-        type: "line",
-        data: {
-           
-            fill: false,
-            datasets: [{
-                backgroundColor: barColors2,
-                data: yValues2
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "POWER SERIES"
-            }
-        }
-    });
-
-    new Chart("myChart5", {
-        type: "line",
-        data: {
-           
-            fill: false,
-            datasets: [{
-                backgroundColor: barColors2,
-                data: yValues2
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "LOAD BALANCING"
-            }
-        }
-    });
-
-    new Chart("myChart6", {
-        type: "line",
-        data: {
-           
-            fill: false,
-            datasets: [{
-                backgroundColor: barColors2,
-                data: yValues2
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "PHASE BALANCING"
-            }
-        }
-    });
-
-
-    
-    new Chart("myChart7", {
-        type: "line",
-        data: {
-           
-            fill: false,
-            datasets: [{
-                backgroundColor: barColors2,
-                data: yValues2
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "CURRENT BALANCING"
-            }
-        }
+      }
     });
     </script>
 </body>

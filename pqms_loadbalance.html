@@ -257,7 +257,7 @@
                     <div class="col-xs-12 col-md-12">
                         <div class="card">
                             <div class="card-block" style="min-width: 600px;">
-                                <canvas id="myChart" style="position: relative; height:40vh; width:80vw; "></canvas>
+                                <canvas id="myChart-load" style="position: relative; height:40vh; width:80vw; "></canvas>
                             </div>
                         </div>
                     </div>
@@ -370,10 +370,8 @@
         }
     });
     // chart code starts
-    var xValues = ["1", "3", "5", "7", "9", "11", "13", "15", ];
-    var yValues = [0, 1, 3, 2, 1, 6, 3, 6 ];
-    var xValues2 = ["Residential", "Industrail", "Commercials", "Hats", "Agriculture"];
-    var yValues2 = [65, 40, 44, 15, 25];
+    var xValuesload = ["11:45:36", "12:00:00", "12:14:24", "12:28:48", "12:43:12", "12:57:36", "13:12:00", "13:26:36", "13:40:48",];
+    var yValuesload = [, 55, 55, 53, 50, 45, 48, 55,,,60 ];
     var barColors = [
         "#b91d47",
         "#00aba9",
@@ -389,18 +387,22 @@
         "#1e7145"
     ];
 
-    new Chart("myChart", {
+
+    
+    new Chart("myChart-load", {
         type: "line",
         data: {
-            labels: xValues,
+            labels: xValuesload,
             datasets: [{
+                label: 'Power Consumption',
                 backgroundColor: barColors,
                 borderColor: '#2C7EB5',
+                fill:false,
                 
                 
                 backgroundColor: '#DEE8F4',
                 lineTension:0.3,
-                data: yValues
+                data: yValuesload
             }]
         },
         options: {
@@ -418,22 +420,8 @@
 
         
     });
-    new Chart("myChart2", {
-        type: "pie",
-        data: {
-            labels: xValues2,
-            datasets: [{
-                backgroundColor: barColors2,
-                data: yValues2
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "Type of Consumers"
-            }
-        }
-    });
+
+
     </script>
 </body>
 
